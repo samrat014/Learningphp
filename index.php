@@ -1,19 +1,10 @@
 <?php
-// if(isset($_POST['submit']))
-$num1 = $_POST['name'];
-$num2 = $_POST['email'];
+
+$conn = mysqli_connect("localhost","root","","lphp")
+$sql = "insert into students(name,age) values('sam','69')";
+
+// $sql = "delete from students where numnber = 3";
 
 
-echo '<pre>';
-// print_r($_POST);
-$ans = $num1 + $num2;
-
-echo $ans;
-
+mysqli_query($conn,$sql);
 ?>
-
-<form method="post">
-    <input type="textbox" name="name" /><br>
-    <input type="textbox" name="email" /><br>
-<input type="submit" name='submit' />
-</form>
