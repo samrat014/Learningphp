@@ -13,17 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/','welcome');
+    Route::view('/','welcome');
 
 
-Route::view('page','page');
+    Route::view('page','page');
 
-Route::get('/web', function(){
+    // Route::get('/web', function() {
 
-    return view('web',array('name'=> 'vaishal'));
-});
+    //     return view('web' ,array('name'=> 'samrat'));
+    //     });
 
- Route::view('news1' , 'news1');
- Route::view('news2' , 'news2');
+ Route::view('news1' , 'news1') -> middleware('usercheck') ;
+ Route::view('news2' , 'news2') -> middleware('usercheck');  
 
- Route::view('hw','hello-world');
+ Route::view('denied','denied');

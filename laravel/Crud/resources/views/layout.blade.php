@@ -9,7 +9,7 @@
 
 
 <div id="au">
-
+this is form layout to news1
 @section('value') 
 </div>
 
