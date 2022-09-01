@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DemoController;
+use App\Http\Controllers\DB_test;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,3 +46,6 @@ use App\Http\Controllers\DemoController;
 
     Route::view('login','login');
     route::post('userlogin',[DemoController::class, 'userlogin']);
+    
+    
+    route::get('select',[DB_test::class, 'select']);
