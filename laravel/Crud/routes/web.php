@@ -47,5 +47,11 @@ use App\Http\Controllers\DB_test;
     Route::view('login','login');
     route::post('userlogin',[DemoController::class, 'userlogin']);
     
-    
+    // select data from data base using controller function
     route::get('select',[DB_test::class, 'select']);
+    //insert into database
+    route::get('insert',[DB_test::class, 'insert']);
+    //update the database
+    route::get('update',[DB_test::class, 'update']);
+    // delete the database
+    route::get('delete',[DB_test::class, 'delete']);
