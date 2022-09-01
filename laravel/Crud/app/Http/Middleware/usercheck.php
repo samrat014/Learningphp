@@ -20,6 +20,7 @@ class usercheck
         if($request->balance > 1000 ){
             return redirect('denied');
         }
+        
         return $next($request);
     }
 }

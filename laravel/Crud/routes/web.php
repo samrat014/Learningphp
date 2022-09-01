@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\DemoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,10 +20,28 @@ use Illuminate\Support\Facades\Route;
 
     // Route::get('/web', function() {
 
-    //     return view('web' ,array('name'=> 'samrat'));
+    //     return view('web');
     //     });
 
  Route::view('news1' , 'news1') -> middleware('usercheck') ;
  Route::view('news2' , 'news2') -> middleware('usercheck');  
 
  Route::view('denied','denied');
+ 
+//  Route::group(['middleware'=>['usercheck']])
+ 
+
+//  Route::view('profile', function () {
+    
+    // })->middleware('usercheck');
+    
+    
+    Route::get('firstView',[DemoController::class, 'index']);
+    
+    
+    Route::get('session_set',[DemoController::class, 'session_set']);
+    Route::get('session_get',[DemoController::class, 'session_get']);
+    Route::get('session_remove',[DemoController::class, 'session_remove']);
+
+    Route::view('login','login');
+    route::post('userlogin',[DemoController::class, 'userlogin']);
