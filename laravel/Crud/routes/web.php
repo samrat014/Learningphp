@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DemoController;
+use App\Http\Controllers\Userprofile;   
 use App\Http\Controllers\DB_test;
 /*
 |--------------------------------------------------------------------------
@@ -55,3 +56,7 @@ use App\Http\Controllers\DB_test;
     route::get('update',[DB_test::class, 'update']);
     // delete the database
     route::get('delete',[DB_test::class, 'delete']);
+    
+    
+    route::get('getdata',[Userprofile::class, 'get_data']);
+    
