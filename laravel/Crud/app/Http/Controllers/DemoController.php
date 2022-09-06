@@ -16,7 +16,7 @@ function index(Request $request){
     echo "hello from controller form indexfunction";
 }
 
-
+// session lessons
 function session_set(Request $r){
     $r->session()->put('name','samrat');
 
@@ -30,8 +30,8 @@ function session_remove(Request $r){
 
 }
 
+// validating the users loging activity 
 function userlogin(Request $r){
-
     
     $request-> validate([
         'email' => 'required',
