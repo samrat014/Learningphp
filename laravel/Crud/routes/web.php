@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DemoController;
+use App\Http\Controllers\TodoController;
 use App\Http\Controllers\Userprofile;   
 use App\Http\Controllers\DB_test;
 /*
@@ -59,4 +60,7 @@ use App\Http\Controllers\DB_test;
     
     
     route::get('getdata',[Userprofile::class, 'get_data']);
-    
+
+
+    route::get('todo_show',[TodoController::class, 'todo_show']);
+    route::get('todo_delete/{id}',[TodoController::class, 'destroy']);

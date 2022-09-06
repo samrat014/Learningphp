@@ -21,6 +21,8 @@ class Userprofile extends Controller
         
         $del = Profile::where('number',0);
         $del->delete();
+        // or updated
+        // $del->update(array('row'=>"valuehere"));
         return Profile::all();
 
 
@@ -30,6 +32,8 @@ class Userprofile extends Controller
 
         // or call the db
     //    protected $table="profile";
+
+
     }
 
 }
