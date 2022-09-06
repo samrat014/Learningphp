@@ -1,13 +1,21 @@
 
 <title> view todo </title>
 
-<table border='1px'>
+<table border='2px' >
     
     <tr>
         <td>id</td>
         <td>name</td>
         <td>note</td>
+        <td>action</td>
+
     </tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr><a href="addtodo">Add</a> </tr>
+
+
 @foreach($todoArr as $todo)
     <tr>
         <td>{{$todo->id}}</td>

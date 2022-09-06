@@ -33,7 +33,7 @@ function session_remove(Request $r){
 // validating the users loging activity 
 function userlogin(Request $r){
     
-    $request-> validate([
+    $r-> validate([
         'email' => 'required',
     'password' => 'required'
 ]);
