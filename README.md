@@ -1,2 +1,3 @@
-# Learningphp,
-  laravel
+# Learning
+ - php
+ - laravel
