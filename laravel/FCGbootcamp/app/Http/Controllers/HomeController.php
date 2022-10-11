@@ -21,9 +21,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index($user)
+    public function index()
     {
-       dd(User::find($user));
         return view('home');
     }
 }
