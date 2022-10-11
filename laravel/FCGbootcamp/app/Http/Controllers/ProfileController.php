@@ -10,9 +10,9 @@ class ProfileController extends Controller
 {
     public function index($user)
     {
-      $user = profile::find($user) ;
-    // dd($user);
-        return view('home' , [
+      $user = profile::findorfail($user) ;
+  
+        return view('index' , [
             'user' => $user,
         ]);
     }

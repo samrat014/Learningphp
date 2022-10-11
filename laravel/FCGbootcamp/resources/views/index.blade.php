@@ -7,15 +7,15 @@
             <h1>   
                 {{ $user->name }}
             </h1>
+            <a href="#">Add new post</a>
             <h1>{{ $user->description }} </h1>  
-              <div><strong>0</strong> followers</div>
+              <div><strong>{{$user->id}}</strong> followers</div>
               <div class="row">
                   <div class="col-4"> <img src="4.jpg" alt=""></div>
                   <div class="col-4"> <img src="4.jpg" alt=""></div>
                   <div class="col-4"> <img src="4.jpg" alt=""></div>
               </div>
         </div>
-
 
         </div>
     </div>

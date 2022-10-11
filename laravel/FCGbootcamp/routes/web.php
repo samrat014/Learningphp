@@ -20,5 +20,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/profile/{user}', [App\Http\Controllers\ProfileController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('/profile/{user}', [App\Http\Controllers\ProfileController::class, 'index'])->name('index');
+
+Route::post('/up', [App\Http\Controllers\postController::class, 'store']);
+
