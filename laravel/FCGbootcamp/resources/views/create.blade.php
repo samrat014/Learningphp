@@ -10,10 +10,14 @@
                 <strong>
                     caption </strong>
                     
-                    <input type="text" placeholder="say smt about your post"> 
+                    <input type="text" 
+                            name="caption"
+                            placeholder="say smt about your post"> 
                     <br>
                     <strong>image :</strong>
-                    <input class="file p-3" type="file">
+                    <input class="file p-3" 
+                            name="image"
+                             type="file">
                     <div class="row pt-4">
                         <button class="btn btn-primary">upload</button>
                     </div>

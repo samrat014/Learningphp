@@ -5,11 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-6 p-1">
             <h1>   
-                {{ $user->name }}
+                {{ Auth::user()->name }}
             </h1>
-            <a href="#">Add new post</a>
-            <h1>{{ $user->description }} </h1>  
-              <div><strong>{{$user->id}}</strong> followers</div>
+            <a href="">Add new post</a>
+            <h1>{{ Auth::user()->description }} </h1>  
+              <div><strong>{{Auth::user()->id}}</strong> followers</div>
               <div class="row">
                   <div class="col-4"> <img src="4.jpg" alt=""></div>
                   <div class="col-4"> <img src="4.jpg" alt=""></div>
