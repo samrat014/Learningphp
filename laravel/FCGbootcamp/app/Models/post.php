@@ -15,6 +15,7 @@ class post extends Model
     }
     protected $fillable = [
         'caption',
+        'image',
     ];
 
     protected $hidden = [

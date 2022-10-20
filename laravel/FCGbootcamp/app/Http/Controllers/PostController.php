@@ -22,10 +22,12 @@ class PostController extends Controller
             'image' => 'required',
         ]);
 auth()->user()->posts()->create($data);
-        // post::create([
-        //     $data,
-        // ]);
+    }
 
-        dd(request()->all());
+    public function show($id)
+    {
+        post::find($id);
+        
+        return view('showUser',['id' => $id]);
     }
 }
