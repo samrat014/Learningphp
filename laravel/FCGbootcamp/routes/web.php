@@ -24,7 +24,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/profile/{user}', [App\Http\Controllers\ProfileController::class, 'index'])->name('index');
 
 
-Route::get('/up', [App\Http\Controllers\postController::class, 'create']);
+Route::get('/upload', [App\Http\Controllers\postController::class, 'create']);
 Route::post('/up', [App\Http\Controllers\postController::class, 'store']);
 
 Route::get('/show/{id}', [App\Http\Controllers\postController::class, 'show']);

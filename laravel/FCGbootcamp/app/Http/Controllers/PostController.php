@@ -21,7 +21,7 @@ class PostController extends Controller
             'caption' => 'required',
             'image' => 'required',
         ]);
-auth()->user()->posts()->create($data);
+    auth()->user()->posts()->create($data);
     }
 
     public function show($id)
