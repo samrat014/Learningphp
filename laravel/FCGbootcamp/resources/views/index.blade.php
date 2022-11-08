@@ -7,14 +7,16 @@
             <h1>   
                 {{ Auth::user()->name }}
             </h1>
-            <a href="">Add new post</a>
+            {{ Auth::user()->post->count() }}
+            <a href=" {{url('upload') }}">Add new post</a>
             <h1>{{ Auth::user()->description }} </h1>  
               <div><strong>{{Auth::user()->id}}</strong> followers</div>
               <div class="row">
-                  <div class="col-4"> <img src="4.jpg" alt=""></div>
-                  <div class="col-4"> <img src="4.jpg" alt=""></div>
-                  <div class="col-4"> <img src="4.jpg" alt=""></div>
-              </div>
+                @foreach (Auth::user()->posts as $post)
+                    <img src="{{ $post->image}}" alt="image">
+                    <img src="{{ $post->caption}}" alt="">
+                @endforeach
+            </div>
         </div>
 
         </div>

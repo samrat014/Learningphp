@@ -6,11 +6,7 @@
         <div class="col-6 p-1">
             <h1>   
                 
-            @foreach($posts as $post)
-                
-                {{$post->caption}}
-
-            @endforeach
+         
             <div class="row">
 
             </div>

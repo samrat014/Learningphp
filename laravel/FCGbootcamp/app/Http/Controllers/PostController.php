@@ -11,23 +11,27 @@ class PostController extends Controller
     {
         $this->middleware('auth');
     }
+
     public function create()
     {
         return view('create');
     }
+
     public function store(Request $request)
     {
         $data = request()->validate([
             'caption' => 'required',
             'image' => 'required',
         ]);
-    auth()->user()->posts()->create($data);
-    }
-
-    public function show($id)
-    {
-        post::find($id);
+        auth()->user()->posts()->create($data);
         
-        return view('showUser',['id' => $id]);
+        // redirect('/home/' . auth()->user()->id);
+}
+
+    public function show( \app\Models\post $id)
+    {
+        return view('showUser',[
+            'id' => $id
+        ]);        
     }
 }
