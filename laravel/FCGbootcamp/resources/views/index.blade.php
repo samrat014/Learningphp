@@ -1,23 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-6 p-1">
             <h1>   
-                {{ Auth::user()->name }}
+                {{ Auth::user()->name }} 
             </h1>
-            {{ Auth::user()->post->count() }}
-            <a href=" {{url('upload') }}">Add new post</a>
-            <h1>{{ Auth::user()->description }} </h1>  
-              <div><strong>{{Auth::user()->id}}</strong> followers</div>
-              <div class="row">
-                @foreach (Auth::user()->posts as $post)
-                    <img src="{{ $post->image}}" alt="image">
-                    <img src="{{ $post->caption}}" alt="">
-                @endforeach
-            </div>
-        </div>
+            <a href=" {{url('upload') }}">Add post</a>
+            
+            <div>
+                <strong>
+                    {{ Auth::user()->profile->description }}    
+                    {{Auth::user()->id}} <br> 
+                </strong> followers</div>
+                
+
+    <div class="row">
+        @foreach (Auth::user()->posts as $post)
+        <img src="/storage/{{ $post->image }}" alt="image">
+        {{ $post->caption}}
+        @endforeach
+    </div>
+</div>
 
         </div>
     </div>

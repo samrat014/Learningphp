@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <form action="/up" method="POST"> 
+    <form action="/up" method="POST" enctype="multipart/form-data"> 
     @csrf
         <div class="row justify-content-center">
             <div class="col-6 p-1">
@@ -16,6 +16,7 @@
                     <br>
                     <strong>image :</strong>
                     <input class="file p-3" 
+                            id="image"
                             name="image"
                              type="file">
                     <div class="row pt-4">

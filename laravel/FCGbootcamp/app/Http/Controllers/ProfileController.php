@@ -8,12 +8,12 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function index($user)
-    {
-      $user = profile::findorfail($user) ;
-  
-        return view('index' , [
-            'user' => $user,
+   
+        public function index($user)
+        {
+       $user = User::findorfail($user) ;
+            return view('index',[
+            'user' => '$user',
         ]);
     }
 }
