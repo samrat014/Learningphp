@@ -12,16 +12,19 @@
             
             <div>
                 <strong>
-                    {{ Auth::user()->profile->description }}    
-                    {{Auth::user()->id}} <br> 
-                </strong> followers</div>
-                
+               <br> <strong>
+                    {{Auth::user()->posts->count()}} </strong> post
+                <strong>
+                    {{Auth::user()->id}}  </strong> followers
+                </div>
 
-    <div class="row">
+    <div class="row pt-5">
         @foreach (Auth::user()->posts as $post)
-        <img src="/storage/{{ $post->image }}" alt="image">
-        {{ $post->caption}}
-        @endforeach
+        <div class="col-4 pb-5">
+            <img src="/storage/{{ $post->image }}" alt="image"><br>
+            {{ $post->caption}}
+        </div>
+            @endforeach
     </div>
 </div>
 

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\profile;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
@@ -15,5 +14,10 @@ class ProfileController extends Controller
             return view('index',[
             'user' => '$user',
         ]);
+    }
+
+    public function show()
+    {
+        
     }
 }

@@ -31,5 +31,5 @@ Route::get('/upload', [App\Http\Controllers\postController::class, 'create']);
 Route::post('/up', [App\Http\Controllers\postController::class, 'store']);
 
 // show user by id 
-Route::get('/show/{post}', [App\Http\Controllers\postController::class, 'show']);
+Route::get('/show/{post}', [App\Http\Controllers\ProfileController::class, 'show']);
 
