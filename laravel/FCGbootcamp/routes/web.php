@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 
 /*
@@ -19,13 +20,16 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+// view the profile
+Route::get('/home', function(){
+    return view('welcome');
+});
 Route::get('/profile/{user}', [App\Http\Controllers\ProfileController::class, 'index'])->name('index');
 
-
-Route::get('/up', [App\Http\Controllers\postController::class, 'create']);
+//upload an image
+Route::get('/upload', [App\Http\Controllers\postController::class, 'create']);
 Route::post('/up', [App\Http\Controllers\postController::class, 'store']);
 
-Route::get('/show/{id}', [App\Http\Controllers\postController::class, 'show']);
+// show user by id 
+Route::get('/show/{post}', [App\Http\Controllers\ProfileController::class, 'show']);
 

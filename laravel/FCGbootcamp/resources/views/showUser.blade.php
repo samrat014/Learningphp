@@ -5,13 +5,17 @@
     <div class="row justify-content-center">
         <div class="col-6 p-1">
             <h1>   
-                
+           {{ Users->id }}
             </h1>
-            <a href="">Add new post</a>
-            <h1>{{ Auth::user()->description }} </h1>  
+           
               <div><strong>{{Auth::user()->id}}</strong> followers</div>
-              <div class="row">
 
+            <div class="row">
+                @foreach (Auth::user()->posts as $post)
+                    {{ $post->id}}
+                    <img src="{{ $post->image}}" alt="image">
+                   {{ $post->caption}}
+                @endforeach
             </div>
         </div>
 
