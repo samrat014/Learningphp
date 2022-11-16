@@ -8,7 +8,9 @@
             <h1>   
                 {{ Auth::user()->name }} 
             </h1>
-            <a href=" {{url('upload') }}">Add post</a>
+            <a href=" {{url('upload') }}">Add post</a><br>
+            <!-- <a href=" /profile/{{ Auth::user()->id }}/edit">edit </a> -->
+            <a href=" {{url('edit') }}">edit</a><br>
             
             <div>
                 <strong>
@@ -21,7 +23,10 @@
     <div class="row pt-5">
         @foreach (Auth::user()->posts as $post)
         <div class="col-4 pb-5">
-            <img src="/storage/{{ $post->image }}" alt="image"><br>
+            <a href="/p/{{ $post->id }}">
+
+                <img src="/storage/{{ $post->image }}" alt="image"><br>
+            </a>
             {{ $post->caption}}
         </div>
             @endforeach
