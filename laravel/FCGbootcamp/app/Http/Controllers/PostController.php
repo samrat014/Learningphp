@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\post;
+use App\Models\profile;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -28,9 +28,12 @@ class PostController extends Controller
         
         
         $imagePath = request('image')->store('upload','public');
+        
         // resize the image
+        // not working getting error :: GD Library extension not available with this PHP installation.
         // $imageResize = Image::make(public_path("/storage/{{$imagePath}}"))->fit(1200,1200);
         // $imageResize->save();
+
 
         auth()->user()->posts()->create([
             'caption' => $data['caption'],
@@ -40,13 +43,17 @@ class PostController extends Controller
        return redirect('/profile/' .auth()->user()->id);
 }
 
-    // public function show( post $id)
-    // {
-    //     dd($id);
-    //     $user = User::findorfail($id) ;
-        
-    //     return view('showUser',[
-    //         'id' => $id
-    //     ]);        
-    // }
+public function show( \App\Models\post $post )
+    {
+         return view('showPost',[
+            'post' => $post,
+         ]);
+    }
+
+
+
+    public function delete($post)
+    {
+        dd($post);
+    }
 }

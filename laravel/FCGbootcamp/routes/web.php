@@ -24,12 +24,13 @@ Auth::routes();
 Route::get('/home', function(){
     return view('welcome');
 });
-Route::get('/profile/{user}', [App\Http\Controllers\ProfileController::class, 'index'])->name('index');
+Route::get('/profile/{user}', [App\Http\Controllers\ProfileController::class, 'index']);
 
 //upload an image
 Route::get('/upload', [App\Http\Controllers\postController::class, 'create']);
 Route::post('/up', [App\Http\Controllers\postController::class, 'store']);
+Route::get('/p/{post}', [App\Http\Controllers\postController::class, 'show']);
+Route::get('/edit', [App\Http\Controllers\ProfileController::class, 'edit']);
 
-// show user by id 
-Route::get('/show/{post}', [App\Http\Controllers\ProfileController::class, 'show']);
-
+//post controller
+Route::get('/delete/{$post}', [App\Http\Controllers\PostController::class, 'delete']);
