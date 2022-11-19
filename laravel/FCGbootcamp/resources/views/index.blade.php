@@ -9,8 +9,7 @@
                 {{ Auth::user()->name }} 
             </h1>
             <a href=" {{url('upload') }}">Add post</a><br>
-            <!-- <a href=" /profile/{{ Auth::user()->id }}/edit">edit </a> -->
-            <a href=" {{url('edit') }}">edit</a><br>
+            <a href=" /profile/{{ Auth::user()->id }}/edit">edit </a>
             
             <div>
                 <strong>

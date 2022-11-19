@@ -5,19 +5,24 @@
 <div class="container">
     <div class="row justify-content-center">
     <div class="col-5">
-        edit
-        
+        <form action="/profile/{{ $user->id }}" method="post"> 
+            @csrf
+            @method('PATCH')
+
+            edit profile
         <div class=" p-3">
-            <input class="file p-2" type="text" value="{{Auth::user()->name}}"><br>
-            <input class="file p-2" type="text" value="{{Auth::user()->profile->description}}">
+            name<br>
+            <input class="file p-2" type="text" name = "name" value="{{Auth::user()->name ?? 'enter name' }}"><br>
+            description<br>
+            <input class="file p-2" type="text" value="{{Auth::user()->profile->description ?? 'enter description' }}">
             </div>  
 
-            <button>
-                submit
-            </button>
             
+            <button>
+                save 
+            </button>
         </div>
-
+    </form>
 
     </div>
 </div>

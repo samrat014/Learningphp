@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\profile;
 use App\Models\User;
+use GuzzleHttp\Psr7\Request;
 
 class ProfileController extends Controller
 {
@@ -16,8 +17,24 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function edit()
+    public function edit(profile $user)
     {
-        return view('editProfile');
+        return view('editProfile',[
+            'user' => $user,
+        ]);
+    }
+    
+    public function update(profile $user)
+    {
+            $data = request()->validate([
+        'name' =>'',
+        'description'=> '',
+        'url' => '',
+            ]);
+
+            auth()->user()->profile->update($data);
+
+        return redirect('/profile/' .auth()->user()->id);
+          
     }
 }

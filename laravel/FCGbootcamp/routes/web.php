@@ -30,7 +30,10 @@ Route::get('/profile/{user}', [App\Http\Controllers\ProfileController::class, 'i
 Route::get('/upload', [App\Http\Controllers\postController::class, 'create']);
 Route::post('/up', [App\Http\Controllers\postController::class, 'store']);
 Route::get('/p/{post}', [App\Http\Controllers\postController::class, 'show']);
-Route::get('/edit', [App\Http\Controllers\ProfileController::class, 'edit']);
+
+// profile edit
+Route::get('/profile/{user}/edit ', [App\Http\Controllers\ProfileController::class, 'edit']);
+Route::patch('/profile/{user} ', [App\Http\Controllers\ProfileController::class, 'update']);
 
 //post controller
 Route::get('/delete/{$post}', [App\Http\Controllers\PostController::class, 'delete']);
