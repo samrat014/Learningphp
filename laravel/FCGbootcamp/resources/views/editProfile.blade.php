@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row justify-content-center">
     <div class="col-5">
-        <form action="/profile/{{ $user->id }}" method="post"> 
+        <form action="/profileupdate/{{ $user->id }}" method="post"> 
             @csrf
             @method('PATCH')
 

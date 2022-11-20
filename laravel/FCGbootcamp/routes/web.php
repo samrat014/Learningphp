@@ -33,7 +33,7 @@ Route::get('/p/{post}', [App\Http\Controllers\postController::class, 'show']);
 
 // profile edit
 Route::get('/profile/{user}/edit ', [App\Http\Controllers\ProfileController::class, 'edit']);
-Route::patch('/profile/{user} ', [App\Http\Controllers\ProfileController::class, 'update']);
+Route::patch('/profileupdate/{user} ', [App\Http\Controllers\ProfileController::class, 'update']);
 
 //post controller
 Route::get('/delete/{$post}', [App\Http\Controllers\PostController::class, 'delete']);

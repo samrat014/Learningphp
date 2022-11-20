@@ -30,7 +30,7 @@ class profilePolicy
      */
     public function view(User $user, profile $profile)
     {
-        //
+
     }
 
     /**
@@ -53,7 +53,7 @@ class profilePolicy
      */
     public function update(User $user, profile $profile)
     {
-        //
+        return $user->id == $profile->user_id;
     }
 
     /**
