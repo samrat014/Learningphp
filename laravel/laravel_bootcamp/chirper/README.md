@@ -2,6 +2,6 @@
 chirps = short notes
     
 # learned 
-    - inertia 
-    - relation of models
+    - about inertia 
+    - relation in the models
     - crud of chirps
