@@ -24,3 +24,4 @@ class post extends Model
         'updated_at',
     ];
 }
+
