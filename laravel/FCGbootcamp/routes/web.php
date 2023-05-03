@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Middleware\eighteenplus;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ProfileController;
 
 
 /*
@@ -17,14 +19,15 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware(eighteenplus::class);
+Route::post('/checkage', [eighteenplus::class] );
 
 Auth::routes();
 // view the profile
 Route::get('/home', function(){
     return view('welcome');
 });
-Route::get('/profile/{user}', [App\Http\Controllers\ProfileController::class, 'index']);
+Route::get('/profile/{user}', [ProfileController::class, 'index']);
 
 //upload an image
 Route::get('/upload', [App\Http\Controllers\postController::class, 'create']);
